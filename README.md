@@ -1,2 +1,2 @@
-# AtomicG-Templates
-AtomicG Templates
+# AtomicG
+AtomicG Generator
