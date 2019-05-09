@@ -1,7 +1,7 @@
 # AtomicG
 *AtomicG Generator Tool*
 
-The idea with this tool is to provide an easy and intuitive way to generate code for the Backend and Frontend based on a **Model** defined by us and templates that we can have access [here](https://github.com/gorums/AtomicG-Templates/tree/master/templates). 
+The idea with this tool is to provide an easy and intuitive way to generate code for the Backend and Frontend based on a **Model** defined by us and using templates that we can have access [here](https://github.com/gorums/AtomicG-Templates/tree/master/templates). 
 
 We want to generate integrated **CRUDs** base on good practices for the most used frameworks today such as **Angular**, **React**, **DotNet Core**, **ExpressJs**, etc.
 
