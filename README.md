@@ -7,11 +7,36 @@ The goal is generate integrated **CRUDs** code base on good practices for the mo
 
 ## Model
 
+The Model defines the entities and fields with properties that we use to send to the templates to generate the code, plus other configurations like the project name, version, etc.
 
+Example of simple valid Model on yaml
+
+```yaml
+projectName: MyProjectName
+entities:
+  - name: user
+    fields:
+      - name: id
+        type: guid
+        key: true
+        
+      - name: email
+        type: string
+        required: true
+        
+  - name: group 
+      - name: id
+        type: guid
+        key: true
+        
+      - name: name
+        type: string
+        required: true
+```
 
 ## Templates
 
-Check the templates documentation [here](https://github.com/gorums/AtomicG-Templates/tree/master/templates)
+Check the template's documentation [here](https://github.com/gorums/AtomicG-Templates/tree/master/templates)
 
 ## Thanks
 
