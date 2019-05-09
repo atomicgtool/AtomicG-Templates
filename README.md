@@ -34,6 +34,14 @@ entities:
         required: true
 ```
 
+- Properties
+
+- Types
+
+- One Relation
+
+- Many Relation
+
 ## Templates
 
 Check the template's documentation [here](https://github.com/gorums/AtomicG-Templates/tree/master/templates)
