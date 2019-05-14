@@ -1,7 +1,7 @@
 @model AtomicG.Core.Models.TemplateModel
 {
   "name": "@Model.ProjectName",
-  "version": "0.0.1",
+  "version": "@Model.Version",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -4,7 +4,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-@if (Model.IsSolution)
+@if (Model.IntegrateWith != null && Model.IntegrateWith == "Angular")
 {
 <text>using Microsoft.AspNetCore.SpaServices.AngularCli;</text>
 }
@@ -33,7 +33,7 @@ namespace @(Model.ProjectName).Web
                 .SetCompatibilityVersion(CompatibilityVersion.Latest)
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>
     ());
-    @if (Model.IsSolution)
+    @if (Model.IntegrateWith != null && Model.IntegrateWith == "Angular")
     {
         <text>
             // In production, the Angular files will be served from this directory
@@ -54,7 +54,7 @@ namespace @(Model.ProjectName).Web
     }
     else
     {
-    @if (Model.IsSolution)
+   @if (Model.IntegrateWith != null && Model.IntegrateWith == "Angular")
     {
         <text>
             app.UseExceptionHandler("/Error");
@@ -65,7 +65,7 @@ namespace @(Model.ProjectName).Web
     }
 
     app.UseHttpsRedirection();
-    @if (!Model.IsSolution)
+    @if (Model.IntegrateWith == null)
     {
         <text>
             app.UseMvc();

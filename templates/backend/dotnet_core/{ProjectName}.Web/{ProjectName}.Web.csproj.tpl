@@ -3,7 +3,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-@if (Model.IsSolution)
+@if (Model.IntegrateWith != null && Model.IntegrateWith == "Angular")
 {
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
@@ -29,7 +29,7 @@
     <ProjectReference Include="..\@(Model.ProjectName)\@(Model.ProjectName).csproj" />
   </ItemGroup>
 
-@if (Model.IsSolution)
+@if (Model.IntegrateWith != null && Model.IntegrateWith == "Angular")
 {
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
