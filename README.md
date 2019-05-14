@@ -52,7 +52,7 @@ entities:
   - string
   - number
   - boolean
-  - other entity name
+  - another entity name
 
 - One relation
   - if we have one relation with another entity the type is going to be the entity name
