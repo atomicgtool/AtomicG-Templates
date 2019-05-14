@@ -26,6 +26,7 @@ entities:
         required: true
         
   - name: group 
+    fields:
       - name: id
         type: guid
         key: true
