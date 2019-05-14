@@ -13,6 +13,7 @@ Example of simple valid Model on yaml
 
 ```yaml
 projectName: MyProjectName
+version: 0.0.1
 entities:
   - name: user
     fields:
@@ -34,14 +35,43 @@ entities:
         required: true
 ```
 
-- Properties
-
+- General Properties
+  - projectName: The project name 
+  - version: the project version 
+  
+- Entity Properties 
+  - name: Entity name
+  - type: Entity type
+  - key: Entity key (all the entities need one key)
+  - required: true/false
+  - show: the relation field to show if the type is another entity
+  
 - Types
+  - guid
+  - string
+  - number
+  - boolean
+  - other entity name
 
 - One Relation
-
+  - if we have one relation with another entity the type is going to be the entity name
+  
+  ex: 
+  ```
+  - name: country
+    type: country
+    show: name
+  ```
 - Many Relation
-
+  - if we have one or more than one relationship with another entity the type is going to be the entity name with [] postfix
+  
+  ex: 
+  ```
+  - name: roles
+    type: role[]
+    show: name
+  ```
+  
 ## Templates
 
 Check the template's documentation [here](https://github.com/gorums/AtomicG-Templates/tree/master/templates)
