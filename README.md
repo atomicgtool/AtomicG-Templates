@@ -36,8 +36,8 @@ entities:
 ```
 
 - General Properties
-  - projectName: The project name 
-  - version: the project version 
+  - projectName: project name 
+  - version: project version 
   
 - Entity Properties 
   - name: Entity name
