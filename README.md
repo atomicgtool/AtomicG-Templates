@@ -36,14 +36,14 @@ entities:
         required: true
 ```
 
-- General Properties
+- General properties
   - projectName: project name 
   - version: project version 
   
-- Entity Properties 
-  - name: Entity name
-  - type: Entity type
-  - key: Entity key (all the entities need one key)
+- Entity properties 
+  - name: entity name
+  - type: entity type
+  - key: entity key (all the entities need one key)
   - required: true/false
   - show: the relation field to show if the type is another entity
   
@@ -54,7 +54,7 @@ entities:
   - boolean
   - other entity name
 
-- One Relation
+- One relation
   - if we have one relation with another entity the type is going to be the entity name
   
   ex: 
@@ -63,7 +63,7 @@ entities:
     type: country
     show: name
   ```
-- Many Relation
+- Many relations
   - if we have one or more than one relationship with another entity the type is going to be the entity name with [] postfix
   
   ex: 
