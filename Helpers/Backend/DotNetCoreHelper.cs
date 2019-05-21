@@ -1,11 +1,17 @@
 ﻿
 using AtomicG.Core.Models;
 using Microsoft.AspNetCore.Html;
+using System.Linq;
 
 namespace AtomicG.Helper.BackEnd
 {
     public static class DotNetCoreHelper
     {
+        public static string GetKeyType(this Entity entity)
+        {
+            return entity.Fields.FirstOrDefault(c => c.Key).EntityType();
+        }
+
         public static HtmlString GetDtoReturnType(this Field field)
         {
             if (field.Type == "guid")

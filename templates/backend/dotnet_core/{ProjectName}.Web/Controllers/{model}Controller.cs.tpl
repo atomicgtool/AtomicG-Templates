@@ -1,5 +1,6 @@
 ﻿@model AtomicG.Core.Models.Entity
 @using AtomicG.Helper
+@using AtomicG.Helper.BackEnd
 using AutoMapper;
 using @(Model.ProjectName).Core.Services;
 using @(Model.ProjectName).Entities;
@@ -35,7 +36,7 @@ namespace @(Model.ProjectName).Controllers
 
         // GET api/@Model.Name.Pluralize()/{id}
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<IActionResult> Get(@Model.GetKeyType() id)
         {
             var @(Model.Name) = await this.@(Model.Name)Service.Get@(Model.Name.FirstLetterToUpper())ByIdAsync(id);
             if (@(Model.Name) == null)
@@ -64,7 +65,7 @@ namespace @(Model.ProjectName).Controllers
 
         // PUT api/@Model.Name.Pluralize()/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Guid id, [FromBody] @Model.Name.FirstLetterToUpper()Dto @(Model.Name)Dto)
+        public async Task<IActionResult> Put(@Model.GetKeyType() id, [FromBody] @Model.Name.FirstLetterToUpper()Dto @(Model.Name)Dto)
         {
             if (!ModelState.IsValid)
             {
@@ -95,7 +96,7 @@ namespace @(Model.ProjectName).Controllers
 
         // DELETE api/@Model.Name.Pluralize()/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete(@Model.GetKeyType() id)
         {
             var @(Model.Name) = await this.@(Model.Name)Service.Get@(Model.Name.FirstLetterToUpper())ByIdAsync(id);
             if (@(Model.Name) == null)

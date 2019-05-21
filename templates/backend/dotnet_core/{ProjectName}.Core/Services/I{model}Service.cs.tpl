@@ -1,5 +1,6 @@
 ﻿@model AtomicG.Core.Models.Entity
 @using AtomicG.Helper
+@using AtomicG.Helper.BackEnd
 using @(Model.ProjectName).Entities;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace @(Model.ProjectName).Core.Services
     {
         Task<List<@Model.Name.FirstLetterToUpper()>> GetAll@(Model.Name.FirstLetterToUpper().Pluralize())Async();
 
-        Task<@Model.Name.FirstLetterToUpper()> Get@(Model.Name.FirstLetterToUpper())ByIdAsync(Guid id);
+        Task<@Model.Name.FirstLetterToUpper()> Get@(Model.Name.FirstLetterToUpper())ByIdAsync(@Model.GetKeyType() id);
 
         Task<@Model.Name.FirstLetterToUpper()> Create@(Model.Name.FirstLetterToUpper())Async(@Model.Name.FirstLetterToUpper() @Model.Name);
 

@@ -1,11 +1,26 @@
 @model AtomicG.Core.Models.TemplateModel
 # @Model.ProjectName
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+This project was generated with [AtomicG Web Tool](https://www.atomicg.dev/)
+
+## Prerequisites
+
+* [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5 or high
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+@if (Model.IntegrateWithBackend != null && Model.IntegrateWithBackend == "Express NodeJs")
+{
+<text>Run inside `api` folder `npm install` and `npm start` for a dev backend nodejs server. The nodejs server is going to run on `http://localhost:3000/` by default
+</text>
+<text>Run `npm install` && `ng serve --proxy-config proxy.conf.json` for a dev frontend angular server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+</text>
+}
+else
+{
+<text>Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+</text>
+}
 
 ## Code scaffolding
 

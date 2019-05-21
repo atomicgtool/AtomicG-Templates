@@ -10,7 +10,7 @@ import { @Model.Name.FirstLetterToUpper() } from 'src/app/shared/models/@(Model.
 {
   if (!field.IsBasicType())
   {
-<text>import { @field.EntityType().FirstLetterToUpper() } from 'src/app/shared/models/@(field.EntityType()).model';
+<text>import { @field.EntityType().FirstLetterToUpper() } from 'src/app/shared/models/@(field.EntityType().ToLower()).model';
 </text>
   }
 }
