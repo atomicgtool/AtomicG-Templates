@@ -52,6 +52,7 @@ entities:
   - string
   - number
   - boolean
+  - date
   - another entity name
 
 - One relation
