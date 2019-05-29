@@ -10,8 +10,7 @@ namespace @(Model.ProjectName).Entities
     {
 @foreach(var field in Model.Fields)
 {
-<text>
-        public @field.GetEntityReturnType() @field.Name.FirstLetterToUpper() { get; set; }
+<text>        public @field.GetEntityReturnType() @field.Name.FirstLetterToUpper() { get; set; }
 </text>
 }    
     }

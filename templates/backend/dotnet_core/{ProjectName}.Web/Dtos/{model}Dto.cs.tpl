@@ -10,8 +10,7 @@ namespace @(Model.ProjectName).Web.Dtos
     {
 @foreach(var field in Model.Fields)
 {
-<text>
-        public @field.GetDtoReturnType() @field.Name.FirstLetterToUpper() { get; set; }
+<text>        public @field.GetDtoReturnType() @field.Name.FirstLetterToUpper() { get; set; }
 </text>
 }        
     }

@@ -44,7 +44,7 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
 {
   if (!field.IsBasicType())
   {
-<text>    private @field.EntityType().ToLower()Service: @field.EntityType().FirstLetterToUpper()Service,
+<text>              private @field.EntityType().ToLower()Service: @field.EntityType().FirstLetterToUpper()Service,
 </text>
   }
 }
@@ -53,15 +53,15 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
   ngOnInit() {
    this.get@(Model.Name.FirstLetterToUpper())Details(this.route.snapshot.params.@Model.GetKeyName())
       .subscribe(data => {
-        const @Model.Name = data.result
-      
-        this.edit@(Model.Name.FirstLetterToUpper())Form = this.formBuilder.group({
-          @Model.GetKeyName(): [],
+        const @Model.Name = data.result;
+
+          this.edit@(Model.Name.FirstLetterToUpper())Form = this.formBuilder.group({
+            @Model.GetKeyName(): [],
 @foreach (var field in Model.Fields)
 {
   if (!field.Key)
   {
-<text>          @field.Name: @field.GetUpdateInitForm(Model.Name),
+<text>            @field.Name: @field.GetUpdateInitForm(Model.Name),
 </text>
   }
 }
@@ -103,7 +103,7 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
   foreach (var field in Model.GetMuchRelations())
   {
 <text>
-  private add@(field.Name.FirstLetterToUpper())Checkboxes(@Model.Name: @Model.Name.FirstLetterToUpper()) : FormArray { 
+  private add@(field.Name.FirstLetterToUpper())Checkboxes(@Model.Name: @Model.Name.FirstLetterToUpper()): FormArray {
     const checkboxes = new FormArray([]);
 
     this.@field.EntityType().ToLower()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
@@ -114,10 +114,10 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
           checkboxes.push(control);
         });
       });
-      
+
     return checkboxes;
   }
-      
+
   private getSelected@(field.Name.FirstLetterToUpper().Pluralize())(): @field.GetReturnType() {
     return this.edit@(Model.Name.FirstLetterToUpper())Form.value.@field.Name.Pluralize()
       .map((checked, index) => checked ? this.@(field.Name.Pluralize())[index] : null)
@@ -136,10 +136,10 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
       .subscribe(data => {
         this.@field.Name.Pluralize() = data.result;
       });
-      
+
     return new FormControl(@(Model.Name).@field.Name);
   }
-      
+
   compare@(field.Name.FirstLetterToUpper().Pluralize())(@field.EntityType().ToLower()1: @field.EntityType().FirstLetterToUpper(), @field.EntityType().ToLower()2: @field.EntityType().FirstLetterToUpper()): boolean {
     return @field.EntityType().ToLower()1.@field.Show === @field.EntityType().ToLower()2.@field.Show;
   }

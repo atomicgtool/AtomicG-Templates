@@ -14,9 +14,14 @@ namespace AtomicG.Helper.BackEnd
 
         public static HtmlString GetDtoReturnType(this Field field)
         {
-            if (field.Type == "guid")
+            if (field.Type.ToLower() == "guid")
             {
                 return new HtmlString(System.Web.HttpUtility.HtmlDecode("Guid?"));
+            }
+
+            if (field.Type.ToLower() == "date")
+            {
+                return new HtmlString(System.Web.HttpUtility.HtmlDecode("DateTime?"));
             }
 
             if (field.IsBasicType())
@@ -49,7 +54,7 @@ namespace AtomicG.Helper.BackEnd
 
         public static bool IsBasicType(this Field field)
         {
-            return field.Type == "number" || field.Type == "boolean" || field.Type == "string" || field.Type == "guid";
+            return field.Type.ToLower() == "number" || field.Type.ToLower() == "boolean" || field.Type.ToLower() == "string" || field.Type.ToLower() == "guid" || field.Type.ToLower() == "date";
         }
 
         public static string EntityType(this Field field)
@@ -73,7 +78,12 @@ namespace AtomicG.Helper.BackEnd
             {
                 return "int";
             }
-            
+
+            if (field.Type == "date")
+            {
+                return "DateTime";
+            }
+
             return field.Type.Replace("[]", "").FirstLetterToUpper();
         }
     }

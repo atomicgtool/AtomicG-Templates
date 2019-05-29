@@ -40,7 +40,7 @@ export class @Model.Name.FirstLetterToUpper()CreateComponent implements OnInit {
 {
   if (!field.IsBasicType())
   {
-<text>    private @field.EntityType().ToLower()Service: @field.EntityType().FirstLetterToUpper()Service,
+<text>              private @field.EntityType().ToLower()Service: @field.EntityType().FirstLetterToUpper()Service,
 </text>
   }
 }
@@ -79,9 +79,9 @@ export class @Model.Name.FirstLetterToUpper()CreateComponent implements OnInit {
   foreach (var field in Model.GetMuchRelations())
   {
 <text>
-   private add@(field.Name.FirstLetterToUpper().Pluralize())Checkboxes() : FormArray { 
+   private add@(field.Name.FirstLetterToUpper().Pluralize())Checkboxes(): FormArray {
      const checkboxes = new FormArray([]);
-   
+
      this.@field.EntityType().ToLower()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
        .subscribe(data => {
          this.@field.Name.Pluralize() = data.result;
@@ -90,15 +90,15 @@ export class @Model.Name.FirstLetterToUpper()CreateComponent implements OnInit {
            checkboxes.push(control);
          });
        });
-   
+
      return checkboxes;
    }
-   
+ 
    private getSelected@(field.Name.FirstLetterToUpper().Pluralize())(): @field.GetReturnType() {
      return this.add@(Model.Name.FirstLetterToUpper())Form.value.@field.Name.Pluralize()
        .map((checked, index) => checked ? this.@(field.Name.Pluralize())[index] : null)
        .filter(value => value !== null);
-   }   
+   }
 </text>
   }
 }
@@ -112,8 +112,8 @@ export class @Model.Name.FirstLetterToUpper()CreateComponent implements OnInit {
      .subscribe(data => {
        this.@field.Name.Pluralize() = data.result;
      });
-   
-     return new FormControl();
+
+    return new FormControl();
   }
 </text>
   }

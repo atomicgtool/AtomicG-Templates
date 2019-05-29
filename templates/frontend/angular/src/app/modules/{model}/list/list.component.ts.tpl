@@ -17,7 +17,7 @@ export class @Model.Name.FirstLetterToUpper()ListComponent implements OnInit {
   constructor(private @(Model.Name)Service: @Model.Name.FirstLetterToUpper()Service) { }
 
   ngOnInit() {
-    this.get@(Model.Name.Pluralize().FirstLetterToUpper())()
+    this.get@(Model.Name.Pluralize().FirstLetterToUpper())();
   }
 
   private get@(Model.Name.Pluralize().FirstLetterToUpper())(): void {

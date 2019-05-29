@@ -14,7 +14,14 @@
     {
     <div class="form-group">
         <label for="inputName">@field.Name.FirstLetterToUpper()</label>
+        @if (field.EntityType() == "Date")
+		{
+		<input type="date" name="@field.Name" formControlName="@field.Name" class="form-control" id="@field.Name">
+		}
+		else
+		{
         <input name="@field.Name" formControlName="@field.Name" class="form-control" id="@field.Name">
+		}
     </div>
     }
   }

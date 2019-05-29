@@ -33,11 +33,11 @@ export class @Model.Name.FirstLetterToUpper()DetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private @(Model.Name)Service: @Model.Name.FirstLetterToUpper()Service) { }
 
   ngOnInit() {
-    this.get@(Model.Name.FirstLetterToUpper())Details(this.route.snapshot.params.@Model.GetKeyName());    
+    this.get@(Model.Name.FirstLetterToUpper())Details(this.route.snapshot.params.@Model.GetKeyName());
   }
 
   private get@(Model.Name.FirstLetterToUpper())Details(@Model.GetKeyName(): @Model.GetKeyType()) {
-    this.@(Model.Name)Service.get@(Model.Name.FirstLetterToUpper())(@Model.GetKeyName()) 
+    this.@(Model.Name)Service.get@(Model.Name.FirstLetterToUpper())(@Model.GetKeyName())
       .subscribe(data => {
         this.@Model.Name = data.result;
       });
@@ -45,7 +45,7 @@ export class @Model.Name.FirstLetterToUpper()DetailComponent implements OnInit {
 
   onDelete@(Model.Name.FirstLetterToUpper())(@Model.GetKeyName(): @Model.GetKeyType()) {
     if (confirm('Are you sure to delete this @Model.Name')) {
-      this.@(Model.Name)Service.delete@(Model.Name.FirstLetterToUpper())(@Model.GetKeyName())         
+      this.@(Model.Name)Service.delete@(Model.Name.FirstLetterToUpper())(@Model.GetKeyName())
         .subscribe(data => {
           this.router.navigate(['/@Model.Name.Pluralize()']);
         });

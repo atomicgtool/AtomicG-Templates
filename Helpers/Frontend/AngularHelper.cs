@@ -61,6 +61,11 @@ namespace AtomicG.Helper.Frontend
         {
             if (field.IsBasicType())
             {
+                if (field.EntityType() == "Date")
+                {
+                    return new HtmlString(System.Web.HttpUtility.HtmlDecode("new Date()"));
+                }
+
                 return new HtmlString(System.Web.HttpUtility.HtmlDecode("''"));
             }
 
@@ -105,29 +110,34 @@ namespace AtomicG.Helper.Frontend
 
         public static bool IsBasicType(this Field field)
         {
-            return field.Type == "number" || field.Type == "boolean" || field.Type == "string" || field.Type == "guid";
+            return field.Type.ToLower() == "number" || field.Type.ToLower() == "boolean" || field.Type.ToLower() == "string" || field.Type.ToLower() == "guid" || field.Type.ToLower() == "date";
         }
         
         public static string EntityType(this Field field)
         {
-            if (field.Type == "guid")
+            if (field.Type.ToLower() == "guid")
             {
                 return "string";
             }
 
-            if (field.Type == "string")
+            if (field.Type.ToLower() == "string")
             {
                 return "string";
             }
 
-            if (field.Type == "boolean")
+            if (field.Type.ToLower() == "boolean")
             {
                 return "boolean";
             }
 
-            if (field.Type == "number")
+            if (field.Type.ToLower() == "number")
             {
                 return "number";
+            }
+
+            if (field.Type.ToLower() == "date")
+            {
+                return "Date";
             }
 
             return field.Type.Replace("[]", "").FirstLetterToUpper();
@@ -135,24 +145,29 @@ namespace AtomicG.Helper.Frontend
 
         public static string GetReturnType(this Field field)
         {
-            if (field.Type == "guid")
+            if (field.Type.ToLower() == "guid")
             {
                 return "string";
             }
 
-            if (field.Type == "string")
+            if (field.Type.ToLower() == "string")
             {
                 return "string";
             }
 
-            if (field.Type == "boolean")
+            if (field.Type.ToLower() == "boolean")
             {
                 return "boolean";
             }
 
-            if (field.Type == "number")
+            if (field.Type.ToLower() == "number")
             {
                 return "number";
+            }
+
+            if (field.Type.ToLower() == "date")
+            {
+                return "Date";
             }
 
             return field.Type.FirstLetterToUpper();
