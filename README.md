@@ -76,13 +76,13 @@ entities:
 ### Constraints
 
  - `projectName` is required.
- - `projectName` needs to be alphanumeric and start with a letter.
+ - `projectName` needs to be alphanumeric and start with a lowercase letter.
  - `projectName` cannot be more than 25 characters.
  - `entities` needs at least one item inside.
  - All the entities need a `key` field.
- - All the entities need to be alphanumeric and start with a letter.
+ - All the entities need to be alphanumeric and start with a lowercase letter.
  - All the entities cannot be more than 25 characters. 
- - All the fields inside the entities need to be alphanumeric and start with a letter.
+ - All the fields inside the entities need to be alphanumeric and start with a lowercase letter.
  - All the fields inside the entities cannot be more than 25 characters.
  - All the fields inside the entities need basic `type` or another entity as a `type` 
  - We cannot have more than 10 entities.
