@@ -15,8 +15,8 @@ import { @Model.Name.FirstLetterToUpper() } from 'src/app/shared/models/@(Model.
   if (!field.IsBasicType())
   {
 <text>
-import { @field.EntityType().FirstLetterToUpper()Service } from '../../@field.EntityType().ToLower()/@(field.EntityType().ToLower()).service';
-import { @field.EntityType().FirstLetterToUpper() } from 'src/app/shared/models/@(field.EntityType().ToLower()).model';
+import { @field.EntityType().FirstLetterToUpper()Service } from '../../@field.EntityType()/@(field.EntityType()).service';
+import { @field.EntityType().FirstLetterToUpper() } from 'src/app/shared/models/@(field.EntityType()).model';
 </text>
   }
 }
@@ -39,12 +39,12 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
 }
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router,
-    private @(Model.Name)Service: @Model.Name.FirstLetterToUpper()Service,
+              private @(Model.Name)Service: @Model.Name.FirstLetterToUpper()Service,
 @foreach (var field in Model.Fields)
 {
   if (!field.IsBasicType())
   {
-<text>              private @field.EntityType().ToLower()Service: @field.EntityType().FirstLetterToUpper()Service,
+<text>              private @field.EntityType()Service: @field.EntityType().FirstLetterToUpper()Service,
 </text>
   }
 }
@@ -55,7 +55,7 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
       .subscribe(data => {
         const @Model.Name = data.result;
 
-          this.edit@(Model.Name.FirstLetterToUpper())Form = this.formBuilder.group({
+        this.edit@(Model.Name.FirstLetterToUpper())Form = this.formBuilder.group({
             @Model.GetKeyName(): [],
 @foreach (var field in Model.Fields)
 {
@@ -67,17 +67,17 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
 }
       });
 
-      this.edit@(Model.Name.FirstLetterToUpper())Form.patchValue({
+        this.edit@(Model.Name.FirstLetterToUpper())Form.patchValue({
 @foreach (var field in Model.Fields)
 {
   if (field.IsBasicType())
   {
-<text>        @field.Name: @(Model.Name).@field.Name,
+<text>          @field.Name: @(Model.Name).@field.GetEditFormName(),
 </text>
   }
 }
+        });
       });
-    });
   }
 
   private get@(Model.Name.FirstLetterToUpper())Details(@Model.GetKeyName(): @Model.GetKeyType()): Observable<ApiResponse<@Model.Name.FirstLetterToUpper()>> {
@@ -106,7 +106,7 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
   private add@(field.Name.FirstLetterToUpper())Checkboxes(@Model.Name: @Model.Name.FirstLetterToUpper()): FormArray {
     const checkboxes = new FormArray([]);
 
-    this.@field.EntityType().ToLower()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
+    this.@field.EntityType()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
       .subscribe(data => {
         this.@field.Name.Pluralize() = data.result;
         this.@(field.Name.Pluralize()).map((@field.Name.Singularize()) => {
@@ -132,7 +132,7 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
   {
 <text>
   private add@(field.Name.FirstLetterToUpper())Combobox(@Model.Name: @Model.Name.FirstLetterToUpper()): FormControl {
-    this.@field.EntityType().ToLower()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
+    this.@field.EntityType()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
       .subscribe(data => {
         this.@field.Name.Pluralize() = data.result;
       });
@@ -140,8 +140,8 @@ export class @Model.Name.FirstLetterToUpper()UpdateComponent implements OnInit {
     return new FormControl(@(Model.Name).@field.Name);
   }
 
-  compare@(field.Name.FirstLetterToUpper().Pluralize())(@field.EntityType().ToLower()1: @field.EntityType().FirstLetterToUpper(), @field.EntityType().ToLower()2: @field.EntityType().FirstLetterToUpper()): boolean {
-    return @field.EntityType().ToLower()1.@field.Show === @field.EntityType().ToLower()2.@field.Show;
+  compare@(field.Name.FirstLetterToUpper().Pluralize())(@field.EntityType()1: @field.EntityType().FirstLetterToUpper(), @field.EntityType()2: @field.EntityType().FirstLetterToUpper()): boolean {
+    return @field.EntityType()1.@field.Show === @field.EntityType()2.@field.Show;
   }
 </text>      
   }

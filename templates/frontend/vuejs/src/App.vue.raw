@@ -1,0 +1,22 @@
+<template>
+  <div id="app">
+    <nav-menu />
+    <div class="container">
+        <router-view></router-view>
+    </div>
+  </div>
+</template>
+
+<script>
+import NavMenu from './components/NavMenu.vue'
+
+export default {
+  name: 'app',
+  components: {
+    NavMenu
+  }
+}
+</script>
+
+<style>
+</style>

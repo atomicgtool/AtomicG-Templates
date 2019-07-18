@@ -1,0 +1,34 @@
+import axios from 'axios'
+
+export default {
+    get (resource) {
+        return axios.create({
+            baseURL: '/api/',
+            headers: { 'Content-Type': 'application/json' }
+          }).get(resource)
+    },
+    getById (resource, id) {
+        return axios.create({
+            baseURL: '/api/',
+            headers: { 'Content-Type': 'application/json' }
+          }).get(`${resource}/${id}`)
+    },
+    create (resource, data) {
+        return axios.create({
+            baseURL: '/api/',
+            headers: { 'Content-Type': 'application/json' }
+          }).post(resource, data)
+    },
+    update (resource, id, data) {
+        return axios.create({
+            baseURL: '/api/',
+            headers: { 'Content-Type': 'application/json' }
+          }).put(`${resource}/${id}`, data, )
+    },
+    delete (resource, id) {
+        return axios.create({
+            baseURL: '/api/',
+            headers: { 'Content-Type': 'application/json' }
+          }).delete(`${resource}/${id}`)
+    }
+}

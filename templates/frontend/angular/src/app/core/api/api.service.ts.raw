@@ -16,7 +16,6 @@ export class ApiService {
 
   get<T>
     (relativeUrl: string): Observable<ApiResponse<T>> {
-    console.log(relativeUrl);
     return this.http.get<ApiResponse<T>>(this.baseUrl + relativeUrl);
   }
 

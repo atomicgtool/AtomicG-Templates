@@ -26,7 +26,7 @@
               {
                 if (!field.Key)
                 {
-                <td>{{ @(Model.Name).@field.Name @field.GetPipeOrShow()}}</td>
+                <td>{{ @(Model.Name).@field.Name@field.GetPipeOrShow()}}</td>
                 }
               }
                 <td>

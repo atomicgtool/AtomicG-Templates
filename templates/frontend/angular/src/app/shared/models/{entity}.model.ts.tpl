@@ -5,7 +5,7 @@
 {
   if (!field.IsBasicType())
   {
-    <text>import { @field.EntityType() } from './@(field.EntityType().ToLower()).model';
+    <text>import { @field.EntityType().FirstLetterToUpper() } from './@(field.EntityType()).model';
     </text>
   }
 }

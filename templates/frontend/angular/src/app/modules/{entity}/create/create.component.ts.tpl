@@ -11,8 +11,8 @@ import { @Model.Name.FirstLetterToUpper()Service } from '../@(Model.Name).servic
   if (!field.IsBasicType())
   {
 <text>
-import { @field.EntityType().FirstLetterToUpper()Service } from '../../@field.EntityType().ToLower()/@(field.EntityType().ToLower()).service';
-import { @field.EntityType().FirstLetterToUpper() } from 'src/app/shared/models/@(field.EntityType().ToLower()).model';
+import { @field.EntityType().FirstLetterToUpper()Service } from '../../@field.EntityType()/@(field.EntityType()).service';
+import { @field.EntityType().FirstLetterToUpper() } from 'src/app/shared/models/@(field.EntityType()).model';
 </text>
   }
 }
@@ -35,12 +35,12 @@ export class @Model.Name.FirstLetterToUpper()CreateComponent implements OnInit {
 }
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router,
-    private @(Model.Name)Service: @Model.Name.FirstLetterToUpper()Service,
+              private @(Model.Name)Service: @Model.Name.FirstLetterToUpper()Service,
 @foreach (var field in Model.Fields)
 {
   if (!field.IsBasicType())
   {
-<text>              private @field.EntityType().ToLower()Service: @field.EntityType().FirstLetterToUpper()Service,
+<text>              private @field.EntityType()Service: @field.EntityType().FirstLetterToUpper()Service,
 </text>
   }
 }
@@ -82,7 +82,7 @@ export class @Model.Name.FirstLetterToUpper()CreateComponent implements OnInit {
    private add@(field.Name.FirstLetterToUpper().Pluralize())Checkboxes(): FormArray {
      const checkboxes = new FormArray([]);
 
-     this.@field.EntityType().ToLower()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
+     this.@field.EntityType()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
        .subscribe(data => {
          this.@field.Name.Pluralize() = data.result;
          this.@(field.Name.Pluralize()).map(() => {
@@ -108,7 +108,7 @@ export class @Model.Name.FirstLetterToUpper()CreateComponent implements OnInit {
   {
 <text>
   private add@(field.Name.FirstLetterToUpper())Combobox(): FormControl {
-    this.@field.EntityType().ToLower()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
+    this.@field.EntityType()Service.get@(field.Name.FirstLetterToUpper().Pluralize())()
      .subscribe(data => {
        this.@field.Name.Pluralize() = data.result;
      });

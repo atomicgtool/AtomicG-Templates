@@ -7,7 +7,7 @@
 {
   if (!field.Key)
   {
-  <div><strong>@field.Name.FirstLetterToUpper(): </strong>{{ @(Model.Name).@field.Name @field.GetPipeOrShow()}}</div>
+  <div><strong>@field.Name.FirstLetterToUpper(): </strong>{{ @(Model.Name).@field.Name@field.GetPipeOrShow()}}</div>
   }
 }
 <hr />

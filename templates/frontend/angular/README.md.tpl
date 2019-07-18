@@ -11,7 +11,7 @@ This project was generated with [AtomicG Web Tool](https://www.atomicg.dev/)
 
 @if (Model.IntegrateWithBackend != null && Model.IntegrateWithBackend == "Express NodeJs")
 {
-<text>Run inside `api` folder `npm install` and `npm start` for a dev backend nodejs server. The nodejs server is going to run on `http://localhost:3000/` by default
+<text>Run inside `server` folder `npm install` and `npm start` for a dev backend nodejs server. The nodejs server is going to run on `http://localhost:3000/` by default
 </text>
 <text>Run `npm install` && `ng serve --proxy-config proxy.conf.json` for a dev frontend angular server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 </text>

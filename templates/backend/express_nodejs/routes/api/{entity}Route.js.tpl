@@ -19,7 +19,7 @@ router.get('/:id', (req, res, next) => {
 /* POST add a new @Model.Name. */
 router.post('/', (req, res) => {
   const new@(Model.Name.FirstLetterToUpper()) = req.body;
-  const @(Model.Name)Saved = @Model.Name.ToLower()Service.create(new@(Model.Name.FirstLetterToUpper()));
+  const @(Model.Name)Saved = @(Model.Name)Service.create(new@(Model.Name.FirstLetterToUpper()));
 
   res.status(201).send(@(Model.Name)Saved);
 });
